@@ -22,11 +22,15 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
       var url = request.body['text'];
-      var name = "Link (WebView)";
       var returnVal = {
-            "text": "I am a test message <"+url+"|"+name+">" 
-            };
-      response.send(returnVal);
+    "text": "I am a test message http://slack.com",
+    "attachments": [
+        {
+            "text": "<"+url+"|"+name+">"
+        }
+    ]
+};
+      response.send("<a href="+url+">test url</a>");
   }
   else {
       response.send("fail");
