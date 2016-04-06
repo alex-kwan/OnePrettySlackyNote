@@ -42,7 +42,7 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-      //response.send(returnVal);
+      response.send(returnVal);
   }
   else {
       response.send("fail");
