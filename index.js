@@ -25,12 +25,13 @@ app.post('/', function(request, response) {
       var name = "Link (Webview)";
       var returnVal = {
     "response_type": "in_channel",
-    "text": "&lt;"+url+"|"+name+"&gt;"
-    // "attachments": [
-    //     {
-    //         "text": "&lt;"+url+"|"+name+"&gt;"
-    //     }
-    // ]
+    "text": "A OneNote link to page was pasted",
+    "attachments": [
+        {
+                       "title": name,
+            "title_link": url
+        }
+    ]
 };
       response.send(returnVal);
   }
