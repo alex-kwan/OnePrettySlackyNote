@@ -27,7 +27,7 @@ app.post('/', function(request, response) {
     "text": "I am a test message http://slack.com",
     "attachments": [
         {
-            "text": "<"+url+"|"+name+">"
+            "text": "&lt;"+url+"|"+name+"&gt;"
         }
     ]
 };
