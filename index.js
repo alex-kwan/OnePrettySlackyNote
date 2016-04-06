@@ -20,33 +20,33 @@ app.get('/', function(request, response) {
 });
 
 app.post('/', function(request, response) {
-  if(request.body['command'] == "/onenoteurl"){
-      var url = request.body['text'];
-      
+  if(request.body['command'] == "/onenoteurl") {
+      var encodedUrl = request.body['text'];
+  
+      var url = decodeURIComponent(encodedUrl);
+      console.log(url);
 
-var decodedUrl = decodeURIComponent(url);
-console.log(decodedUrl);
-var first = decodedUrl.indexOf(".one|")+ 5
-;
-console.log(" first = " + first);
-var second = decodedUrl.indexOf("/", first)+1;
-console.log(" second = " + second);
-var third = decodedUrl.lastIndexOf("|");
-console.log(" third = " + third);
-var actualName = decodedUrl.substr(second, third-second);
+      var first = url.indexOf(".one|") + 5;
+      console.log(" first = " + first);
 
-var name = actualName+" (Webview)";
-      var responseUrl = request.body['response_url'];
+      var second = url.indexOf("/", first) + 1;
+      console.log(" second = " + second);
+  
+      var third = url.lastIndexOf("|");
+      console.log(" third = " + third);
+
+      var actualName = url.substr(second, third - second);
+      var name = actualName + " (Webview)";
+
       var returnVal = {
-    "response_type": "in_channel",
-    "text": "A OneNote link to page was pasted",
-    "attachments": [
-        {
-                       "title": name,
-            "title_link": url
-        }
-    ]
-};
+        "response_type": "in_channel",
+        "text": "A OneNote link to page was pasted",
+        "attachments": [{
+          "title": name,
+          "title_link": encodedUrl
+        }]
+      };
+
       response.send(returnVal);
   }
   else {
