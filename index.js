@@ -20,10 +20,8 @@ app.get('/', function(request, response) {
 });
 
 app.post('/', function(request, response) {
-   console.log(request.body['command']);
-   console.log(request.body['text']);
-  if(request.params['command'] == "/onenoteurl"){
-      var url = request.params['text'];
+  if(request.body['command'] == "/onenoteurl"){
+      var url = request.body['text'];
       response.send("<a href="+url+">test url</a>");
   }
   else {
