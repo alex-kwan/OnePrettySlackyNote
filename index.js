@@ -31,7 +31,7 @@ var first = decodedUrl.indexOf(".one|")+ 4
 console.log(" first = " + first);
 var second = decodedUrl.indexOf("//", first);
 console.log(" second = " + second);
-var third = decodedUrl.lastindexOf("|");
+var third = decodedUrl.lastIndexOf("|");
 console.log(" third = " + third);
 var actualName = decodedUrl.substr(first, third-first);
 
