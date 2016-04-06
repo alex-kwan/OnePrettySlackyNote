@@ -24,7 +24,7 @@ app.post('/', function(request, response) {
       var url = request.body['text'];
       
 
-var decodedUrl = decodeURI(url);
+var decodedUrl = decodeURIComponent(url);
 console.log(decodedUrl);
 var first = decodedUrl.indexOf(".one|");
 console.log(" first = " + first);
