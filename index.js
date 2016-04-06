@@ -24,12 +24,13 @@ app.post('/', function(request, response) {
       var url = request.body['text'];
       var name = "Link (Webview)";
       var returnVal = {
-    "text": "I am a test message http://slack.com",
-    "attachments": [
-        {
-            "text": "&lt;"+url+"|"+name+"&gt;"
-        }
-    ]
+    "response_type": "in_channel",
+    "text": "&lt;"+url+"|"+name+"&gt;"
+    // "attachments": [
+    //     {
+    //         "text": "&lt;"+url+"|"+name+"&gt;"
+    //     }
+    // ]
 };
       response.send(returnVal);
   }
