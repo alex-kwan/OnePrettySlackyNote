@@ -27,7 +27,7 @@ app.post('/', function(request, response) {
 var decodedUrl = decodeURI(url);
 var first = decodedUrl.indexOf(".one|");
 console.log(" first = " + first);
-var second = decodedUrl.indexOf("/", first);
+var second = decodedUrl.indexOf("//", first);
 console.log(" second = " + second);
 var third = decodedUrl.indexOf("|", second);
 console.log(" third = " + third);
