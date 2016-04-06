@@ -29,11 +29,11 @@ console.log(decodedUrl);
 var first = decodedUrl.indexOf(".one|")+ 5
 ;
 console.log(" first = " + first);
-var second = decodedUrl.indexOf("/", first);
+var second = decodedUrl.indexOf("/", first)+1;
 console.log(" second = " + second);
 var third = decodedUrl.lastIndexOf("|");
 console.log(" third = " + third);
-var actualName = decodedUrl.substr(first, third-first);
+var actualName = decodedUrl.substr(second, third-second);
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
