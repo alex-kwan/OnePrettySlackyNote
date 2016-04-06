@@ -27,11 +27,11 @@ app.post('/', function(request, response) {
 var decodedUrl = decodeURI(url);
 var first = decodedUrl.indexOf(".one|");
 console.log(" first = " + first);
-var second = decodedUrl.indexOf("/", first + 5);
+var second = decodedUrl.indexOf("/", first);
 console.log(" second = " + second);
-var third = decodedUrl.indexOf("|", second + 1);
+var third = decodedUrl.indexOf("|", second);
 console.log(" third = " + third);
-var actualName = decodedUrl.substr(second, 25);
+var actualName = decodedUrl.substr(second, 0);
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
