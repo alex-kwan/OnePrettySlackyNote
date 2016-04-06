@@ -35,9 +35,14 @@ app.post('/', function(request, response) {
     ]
 };
 
-
-reequest(responseUrl, function(error, response, body) {
-  response.send(returnVal);
+reequest({
+  uri: responseUrl,
+  method: "POST",
+  timeout: 10000,
+  followRedirect: true,
+  maxRedirects: 10
+}, function(error, response2, body) {
+  response2.send(returnVal);
 });
 
 
