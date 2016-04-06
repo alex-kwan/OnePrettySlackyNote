@@ -26,10 +26,10 @@ app.post('/', function(request, response) {
 
 var decodedUrl = decodeURIComponent(url);
 console.log(decodedUrl);
-var first = decodedUrl.indexOf(".one|")+ 4
+var first = decodedUrl.indexOf(".one|")+ 5
 ;
 console.log(" first = " + first);
-var second = decodedUrl.indexOf("//", first);
+var second = decodedUrl.indexOf("/", first);
 console.log(" second = " + second);
 var third = decodedUrl.lastIndexOf("|");
 console.log(" third = " + third);
