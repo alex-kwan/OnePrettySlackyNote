@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var reequest = require('request');
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -22,7 +22,15 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
       var url = request.body['text'];
-      var name = "Link (Webview)";
+      
+
+var decodedUrl = decodeURI(url);
+var first = decodedUrl.indexOf(".one|");
+var second = decodedUrl.indexOf("/", first);
+var third = decodedUrl.indexOf("|", second);
+var actualName = decodedUrl.substr(second, third-second);
+
+var name = acutalName+" (Webview)";
       var responseUrl = request.body['response_url'];
       var returnVal = {
     "response_type": "in_channel",
@@ -34,18 +42,6 @@ app.post('/', function(request, response) {
         }
     ]
 };
-
-reequest({
-  uri: responseUrl,
-  method: "POST",
-  timeout: 10000,
-  followRedirect: true,
-  maxRedirects: 10
-}, function(error, response2, body) {
-  response2.send(returnVal);
-});
-
-
       //response.send(returnVal);
   }
   else {
