@@ -28,7 +28,7 @@ var decodedUrl = decodeURI(url);
 var first = decodedUrl.indexOf(".one|");
 var second = decodedUrl.indexOf("/", first + 4);
 var third = decodedUrl.indexOf("|", second + 1);
-var actualName = decodedUrl.substr(first, 25);
+var actualName = decodedUrl.substr(second, 25);
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
