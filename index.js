@@ -26,7 +26,7 @@ app.post('/', function(request, response) {
 
 var decodedUrl = decodeURI(url);
 var first = decodedUrl.indexOf(".one|");
-var second = decodedUrl.indexOf("/", first + 4);
+var second = decodedUrl.indexOf("/", first + 5);
 var third = decodedUrl.indexOf("|", second + 1);
 var actualName = decodedUrl.substr(second, 25);
 
