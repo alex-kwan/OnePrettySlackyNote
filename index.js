@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var reequest = require('request');
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -23,6 +23,7 @@ app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
       var url = request.body['text'];
       var name = "Link (Webview)";
+      var responseUrl = request.body['response_url'];
       var returnVal = {
     "response_type": "in_channel",
     "text": "A OneNote link to page was pasted",
@@ -33,7 +34,14 @@ app.post('/', function(request, response) {
         }
     ]
 };
-      response.send(returnVal);
+
+
+reequest(responseUrl, function(error, response, body) {
+  response.send(returnVal);
+});
+
+
+      //response.send(returnVal);
   }
   else {
       response.send("fail");
