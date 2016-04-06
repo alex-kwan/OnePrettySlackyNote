@@ -25,13 +25,14 @@ app.post('/', function(request, response) {
       
 
 var decodedUrl = decodeURI(url);
+console.log(decodedUrl);
 var first = decodedUrl.indexOf(".one|");
 console.log(" first = " + first);
 var second = decodedUrl.indexOf("//", first);
 console.log(" second = " + second);
-var third = decodedUrl.indexOf("|", second);
+var third = decodedUrl.indexOf("|", first+1);
 console.log(" third = " + third);
-var actualName = decodedUrl.substr(second, 0);
+var actualName = decodedUrl.substr(first+4, third-first);
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
