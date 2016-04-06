@@ -30,7 +30,7 @@ var second = decodedUrl.indexOf("/", first);
 var third = decodedUrl.indexOf("|", second);
 var actualName = decodedUrl.substr(second, third-second);
 
-var name = acutalName+" (Webview)";
+var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
       var returnVal = {
     "response_type": "in_channel",
