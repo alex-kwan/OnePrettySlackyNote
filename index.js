@@ -47,7 +47,8 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-      //response.sendStatus("200")
+      response.sendStatus("200");
+      
   rquest({
       url: request.body.response_url,
       method: 'POST',
