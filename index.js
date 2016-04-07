@@ -47,9 +47,8 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-      response.send({
-          response_type = "ephemeral"
-      })
+      response.sendStatus("200")
+      
   }
   
   
