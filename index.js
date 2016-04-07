@@ -47,10 +47,10 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-      response.send();
+      response.send("");
   }
   else {
-      response.send("fail");
+      response.send("");
   }
   
    rquest({
