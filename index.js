@@ -51,18 +51,25 @@ var name = actualName+" (Webview)";
       
   }
   
-  
-   rquest({
-    uri: responseUrl,
-    headers: { //We can define headers too
-        'Content-Type': 'application/json'
-    },
-    method: 'POST',
-    body: returnVal
-  }, function (error, response, body) {
-    if (error) {
-     // return callback(error);
-    }
+  rquest({
+      url: request.body.response_url,
+      method: 'POST',
+      body: returnVal,
+      json: true
+    }, function () {
+      response.end();
+    });
+//    rquest({
+//     uri: responseUrl,
+//     headers: { //We can define headers too
+//         'Content-Type': 'application/json'
+//     },
+//     method: 'POST',
+//     body: returnVal
+//   }, function (error, response, body) {
+//     if (error) {
+//      // return callback(error);
+//     }
 
    // callback(null, response.statusCode, body);
   });
