@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var rquest = require('request');
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -38,7 +38,7 @@ var actualName = decodedUrl.substr(second, third-second);
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
       var returnVal = {
-    "response_type": "in_channel",
+    //"response_type": "in_channel",
     "text": "A OneNote link to page was pasted",
     "attachments": [
         {
@@ -47,11 +47,20 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-      response.send(returnVal);
-  }
-  else {
-      response.send("fail");
-  }
+
+     rquest({
+    uri: responseUrl,
+    method: 'POST',
+    body: returnVal
+  }, function (error, response, body) {
+    if (error) {
+      return callback(error);
+    }
+
+    callback(null, response.statusCode, body);
+  });
+}
+
 });
 
 app.listen(app.get('port'), function() {
