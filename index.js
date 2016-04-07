@@ -42,12 +42,14 @@ var name = actualName+" (Webview)";
     "text": "A OneNote link to page was pasted",
     "attachments": [
         {
-                       "title": name,
+            "title": name + "<@"+request.body['channel_id']+">",
             "title_link": url
         }
     ]
 };
-      response.sendStatus("200");
+      response.send({
+          response_type = "ephemeral"
+      })
   }
   
   
