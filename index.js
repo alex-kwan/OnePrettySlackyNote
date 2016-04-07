@@ -54,10 +54,10 @@ var name = actualName+" (Webview)";
     body: returnVal
   }, function (error, response, body) {
     if (error) {
-      return callback(error);
+     // return callback(error);
     }
 
-    callback(null, response.statusCode, body);
+   // callback(null, response.statusCode, body);
   });
 }
 
