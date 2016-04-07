@@ -54,6 +54,9 @@ var name = actualName+" (Webview)";
   
    rquest({
     uri: responseUrl,
+    headers: { //We can define headers too
+        'Content-Type': 'application/json'
+    },
     method: 'POST',
     body: returnVal
   }, function (error, response, body) {
