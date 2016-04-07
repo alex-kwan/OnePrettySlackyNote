@@ -29,7 +29,7 @@ console.log(decodedUrl);
 var first = decodedUrl.indexOf(".one|")+ 5
 ;
 console.log(" first = " + first);
-var second = decodedUrl.indexOf("/", first)+1;
+var second = decodedUrl.indexOf("/", first);
 console.log(" second = " + second);
 var third = decodedUrl.lastIndexOf("|");
 console.log(" third = " + third);
@@ -38,7 +38,7 @@ var actualName = decodedUrl.substr(second, third-second);
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
       var returnVal = {
-    //"response_type": "in_channel",
+    "response_type": "in_channel",
     "text": "A OneNote link to page was pasted",
     "attachments": [
         {
@@ -47,8 +47,13 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-
-     rquest({
+      response.send();
+  }
+  else {
+      response.send("fail");
+  }
+  
+   rquest({
     uri: responseUrl,
     method: 'POST',
     body: returnVal
@@ -59,8 +64,6 @@ var name = actualName+" (Webview)";
 
    // callback(null, response.statusCode, body);
   });
-}
-
 });
 
 app.listen(app.get('port'), function() {
