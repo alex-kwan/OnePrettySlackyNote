@@ -4,11 +4,11 @@ A Node.js app using [Express 4] (http://expressjs.com/) to create easy to read O
 
 This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-/onenoteurl https://onedrive.live.com/edit.aspx?cid=<cid>&id=<folder>&resid=<fileid>&app=OneNote&&wd=<sectionfile>|<sectionid>/<pagename>|<pageid>
+/onenoteurl https://onedrive.live.com/edit.aspx?cid=&lt;cid&gt;&id=&lt;folder&gt;&resid=&lt;fileid&gt;&app=OneNote&&wd=&lt;sectionfile&gt;|&lt;sectionid&gt;/&lt;pagename&gt;|&lt;pageid&gt;
 
 I want to turn something that looks like that crazy url into
 
-<pagename> (WebView)
+&lt;pagename&gt; (WebView)
 
  to mimic the experience when you paste a OneNote online page into Skype or Outlook
 
