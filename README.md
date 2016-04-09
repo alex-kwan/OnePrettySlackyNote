@@ -1,18 +1,36 @@
-# node-js-getting-started
+## Header
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A Node.js app using [Express 4] (http://expressjs.com/) to create easy to read OneNote page links into slack channels
 
 This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+
+/onenoteurl https://onedrive.live.com/edit.aspx?cid=<cid>&id=<folder>&resid=<fileid>&app=OneNote&&wd=<sectionfile>|<sectionid>/<pagename>|<pageid>
+
+I want to turn something that looks like that crazy url into
+
+<pagename> (WebView)
+
+ to mimic the experience when you paste a OneNote online page into Skype or Outlook
 
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+
+Since this works as a Slack command in slack, in order to integrate with slack it must be deployed to a public
+instance. However there are probably some components to this microservice which benefit from being deployed locally.
+
 
 ```sh
 $ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
 $ cd node-js-getting-started
 $ npm install
 $ npm start
+
+## my thoughts
+
+I then just put my own code into this sample project
+I am hoping to use this as a rough project for someone else to build off of and as a learning experience
+for contributing towards the open source community. Everyone has to start somewhere! 
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).

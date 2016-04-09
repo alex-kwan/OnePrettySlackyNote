@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.5",
-  "description": "A sample Node.js app using Express 4",
+  "name": "slashcommand-one-pretty-slacky-note",
+  "version": "0.0.2",
+  "description": "Pretty OneNote links in Slack",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -17,12 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/alex-kwan/OnePrettySlackyNote"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "express",
+    "slash-command",
+    "OneNote"
   ],
   "license": "MIT"
 }
