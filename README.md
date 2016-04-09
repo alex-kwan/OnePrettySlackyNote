@@ -4,7 +4,9 @@ A Node.js app using [Express 4] (http://expressjs.com/) to create easy to read O
 
 This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-/onenoteurl https://onedrive.live.com/edit.aspx?cid={CID}&amp;id={DIRECTORY}&amp;resid={FILEID}&amp;app=OneNote&amp;&amp;wd={SECTION}|{SECTIONID}/{PAGENAME}|{PAGEID}
+/onenoteurl &lt;url&gt;
+
+where the url follows this format https://onedrive.live.com/edit.aspx?cid=&lt;CID&gt;&amp;id=&lt;DIRECTORY&gt;&amp;resid=&lt;FILEID&gt;&amp;app=OneNote&amp;&amp;wd=&lt;SECTION&gt;|&lt;SECTIONID&gt;/&lt;PAGENAME&gt;|&lt;PAGEID&gt;
 
 I want to turn something that looks like that crazy url into
 
