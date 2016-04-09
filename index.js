@@ -49,9 +49,12 @@ var name = actualName+" (Webview)";
 };
 }
     response.sendStatus(200);
+    console.log(request.body['response_url']);
     
-    request.url = request.body['response_url'];
-    request.send(returnVal);
+  //  request.post('http://service.com/upload', {form:{key:'value'}})
+    rquest.post(request.body['response_url'], returnVal);
+    // request.url = request.body['response_url'];
+    // request.send(returnVal);
 }
  
 );
