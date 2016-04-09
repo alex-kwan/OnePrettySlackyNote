@@ -47,16 +47,16 @@ var name = actualName+" (Webview)";
         }
     ]
 };
-      response.sendStatus("200");
+//       response.send(returnVal);
       
-  rquest({
-      url: request.body.response_url,
-      method: 'POST',
-      body: returnVal,
-      json: true
-    }, function () {
-      //response.end();
-    });
+//   rquest({
+//       url: request.body.response_url,
+//       method: 'POST',
+//       body: returnVal,
+//       json: true
+//     }, function () {
+//       //response.end();
+//     });
 //    rquest({
 //     uri: responseUrl,
 //     headers: { //We can define headers too
