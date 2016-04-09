@@ -48,7 +48,10 @@ var name = actualName+" (Webview)";
     ]
 };
 }
-    response.send({"response_type": "ephemeral"});
+    response.send({"response_type": "ephemeral",
+    "text": "A OneNote link to page was pasted",
+   
+    });
     console.log(request.body['response_url']);
     
   //  request.post('http://service.com/upload', {form:{key:'value'}})
