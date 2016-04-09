@@ -5,12 +5,11 @@ A Node.js app using [Express 4] (http://expressjs.com/) to create easy to read O
 This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
 /onenoteurl &lt;url&gt;
-
-where the url follows this format https://onedrive.live.com/edit.aspx?cid=&lt;CID&gt;&amp;id=&lt;DIRECTORY&gt;&amp;resid=&lt;FILEID&gt;&amp;app=OneNote&amp;&amp;wd=&lt;SECTION&gt;|&lt;SECTIONID&gt;/&lt;PAGENAME&gt;|&lt;PAGEID&gt;
+https://onedrive.live.com/edit.aspx?cid=&lt;CID&gt;&amp;id=&lt;DIRECTORY&gt;&amp;resid=&lt;FILEID&gt;&amp;app=OneNote&amp;&amp;wd=&lt;SECTION&gt;|&lt;SECTIONID&gt;/&lt;PAGENAME&gt;|&lt;PAGEID&gt;
 
 I want to turn something that looks like that crazy url into
 
-&lt;pagename&gt; (WebView)
+&lt;PAGENAME&gt; (WebView)
 
  to mimic the experience when you paste a OneNote online page into Skype or Outlook
 
@@ -57,3 +56,7 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 - [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+- Official slash-command documentation
+(https://api.slack.com/slash-commands)
+- https://onedrive.live.com/ (this code also works for SharePoint online)
+(Where we get the links to minify them)
