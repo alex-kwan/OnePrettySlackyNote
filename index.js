@@ -42,7 +42,7 @@ var name = actualName+" (Webview)";
     "text": "A OneNote link to page was pasted",
     "attachments": [
         {
-            "title": name + "<@"+request.body['channel_id']+">",
+            "title": name + "<WebView>",
             "title_link": url
         }
     ]
