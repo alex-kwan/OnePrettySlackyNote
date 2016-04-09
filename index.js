@@ -48,7 +48,7 @@ var name = actualName+" (Webview)";
     ]
 };
 }
-    respond.send({
+    response.send({
        response_type : "ephemeral" 
     });
     
