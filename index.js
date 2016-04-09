@@ -48,7 +48,7 @@ var name = actualName+" (Webview)";
     ]
 };
 }
-    response.sendStatus(200);
+    response.send({"response_type": "in_channel"});
     console.log(request.body['response_url']);
     
   //  request.post('http://service.com/upload', {form:{key:'value'}})
