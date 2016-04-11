@@ -52,12 +52,22 @@ var name = actualName+" (Webview)";
     "text": "A OneNote link to page was pasted",
    
     });
-    console.log(request.body['response_url']);
     
-  //  request.post('http://service.com/upload', {form:{key:'value'}})
-    rquest.post(request.body['response_url'], returnVal);
-    // request.url = request.body['response_url'];
-    // request.send(returnVal);
+    rquest({
+      url: request.body['response_url'],
+      method: 'POST',
+      body: returnVal,
+      json: true
+    }, function () {
+      response.end();
+    });
+    
+//     console.log(request.body['response_url']);
+    
+//   //  request.post('http://service.com/upload', {form:{key:'value'}})
+//     rquest.post(request.body['response_url'], returnVal);
+//     // request.url = request.body['response_url'];
+//     // request.send(returnVal);
 }
  
 );
