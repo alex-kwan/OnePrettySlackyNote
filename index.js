@@ -42,14 +42,14 @@ var name = actualName+" (Webview)";
     "text": "A OneNote link to page was pasted",
     "attachments": [
         {
-            "title": name + "<WebView>",
+            "title": name,
             "title_link": url
         }
     ]
 };
 }
     response.send({"response_type": "ephemeral",
-    "text": "A OneNote link to page was pasted",
+        "text": "Going to minimize the url for easy reading :D",
    
     });
     
@@ -61,13 +61,6 @@ var name = actualName+" (Webview)";
     }, function () {
       response.end();
     });
-    
-//     console.log(request.body['response_url']);
-    
-//   //  request.post('http://service.com/upload', {form:{key:'value'}})
-//     rquest.post(request.body['response_url'], returnVal);
-//     // request.url = request.body['response_url'];
-//     // request.send(returnVal);
 }
  
 );
