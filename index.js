@@ -33,7 +33,7 @@ var second = decodedUrl.indexOf("/", first);
 console.log(" second = " + second);
 var third = decodedUrl.lastIndexOf("|");
 console.log(" third = " + third);
-var actualName = decodedUrl.substr(second, third-second);
+var actualName = decodedUrl.substr(second + 1, third-second);
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
