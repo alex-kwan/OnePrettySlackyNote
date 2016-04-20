@@ -35,15 +35,17 @@ var third = decodedUrl.lastIndexOf("|");
 console.log(" third = " + third);
 var actualName = decodedUrl.substr(second, third-second);
 
-var name = actualName+" (Webview)";
+var name = actualName;
       var responseUrl = request.body['response_url'];
       var returnVal = {
     "response_type": "in_channel",
-    "text": "A OneNote link to page was pasted",
     "attachments": [
         {
             "title": name,
-            "title_link": url
+            "title_link": url,
+            "color": "#7D26CD",
+            "author_name": "OneNote Online",
+            "author_icon": "https://c1.staticflickr.com/9/8595/16243851041_5638c638a9_s_d.jpg",
         }
     ]
 };
