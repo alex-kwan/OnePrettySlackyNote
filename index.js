@@ -29,7 +29,7 @@ console.log(decodedUrl);
 var first = decodedUrl.indexOf(".one|")+ 5
 ;
 
-var pageNameRegex = /(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)(.*)(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)/;
+var pageNameRegex = "/(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)(.*)(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)/";
 var actualName = decodedUrl.match(pageNameRegex)[2];
 
 var name = actualName+" (Webview)";
