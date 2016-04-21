@@ -28,12 +28,9 @@ var decodedUrl = decodeURIComponent(url);
 console.log(decodedUrl);
 var first = decodedUrl.indexOf(".one|")+ 5
 ;
-console.log(" first = " + first);
-var second = decodedUrl.indexOf("/", first) + 1;
-console.log(" second = " + second);
-var third = decodedUrl.lastIndexOf("|");
-console.log(" third = " + third);
-var actualName = decodedUrl.substr(second, third-second);
+
+var pageNameRegex = /(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)(.*)(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)/;
+var actualName = decodedUrl.match(pageNameRegex)[2];
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
