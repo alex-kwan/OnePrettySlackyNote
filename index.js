@@ -33,15 +33,17 @@ var pageNameRegex = /(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-
 var pageName = url.match(pageNameRegex)[2];
 var actualName = decodeURIComponent(pageName);
 
-var name = actualName+" (Webview)";
+var name = actualName;
       var responseUrl = request.body['response_url'];
       var returnVal = {
     "response_type": "in_channel",
-    "text": "A OneNote link to page was pasted",
     "attachments": [
         {
             "title": name,
-            "title_link": url
+            "title_link": url,
+            "color": "#7D26CD",
+            "author_name": "OneNote Online",
+            "author_icon": "https://c1.staticflickr.com/9/8595/16243851041_5638c638a9_s_d.jpg",
         }
     ]
 };
