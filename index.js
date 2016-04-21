@@ -31,7 +31,7 @@ app.post('/', function(request, response) {
 
 var pageNameRegex = /(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)(.*)(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)/;
 var pageName = url.match(pageNameRegex)[2];
-var actualName = decodeUriComponent(pageName);
+var actualName = decodeURIComponent(pageName);
 
 var name = actualName+" (Webview)";
       var responseUrl = request.body['response_url'];
