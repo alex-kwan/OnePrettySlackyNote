@@ -2,18 +2,18 @@
   "name": "slashcommand-one-pretty-slacky-note",
   "version": "0.0.2",
   "description": "Pretty OneNote links in Slack",
+  "engines": {
+    "node": "5.9.1"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
-    "ejs": "2.3.3",
-    "express": "4.13.3",
-    "request": "^2.70.0"
-  },
-  "engines": {
-    "node": "0.12.7"
+    "request": "^2.70.0",
+    "ejs": "2.4.1",
+    "express": "4.13.3"
   },
   "repository": {
     "type": "git",
