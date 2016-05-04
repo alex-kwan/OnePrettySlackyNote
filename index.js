@@ -25,14 +25,20 @@ app.post('/', function(request, response) {
 
 var pageNameRegex = /(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)(.*)(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)/;
 var pageName = encodedUrl.match(pageNameRegex)[2];
+
+var sectionNameRegex = /%28(.*).one/;
+var sectionName = encodedUrl.match(sectionNameRegex)[1];
+
 var actualName = decodeURIComponent(pageName);
+
+var actualSection = decodeURIComponent(sectionName);
 
 var name = actualName;
       var returnVal = {
     "response_type": "in_channel",
     "attachments": [
         {
-            "title": name,
+            "title": name+" ("+sectionName+")",
             "title_link": encodedUrl,
             "color": "#7D26CD",
             "author_name": "OneNote Online",
@@ -42,7 +48,7 @@ var name = actualName;
 };
 }
     response.send({"response_type": "ephemeral",
-        "text": "Going to minimize the url for easy reading :D",
+        "text": "Going to minimize the url for easy reading :D, don't worry if it says the request timed out.",
    
     });
     
