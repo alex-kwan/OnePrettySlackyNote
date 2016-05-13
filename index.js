@@ -38,7 +38,7 @@ var name = actualName;
     "response_type": "in_channel",
     "attachments": [
         {
-            "title": name+" ("+sectionName+")",
+            "title": name+" ("+actualSection+")",
             "title_link": encodedUrl,
             "color": "#7D26CD",
             "author_name": "OneNote Online",
