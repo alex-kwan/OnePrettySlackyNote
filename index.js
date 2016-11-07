@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var rquest = require('request');
+var parser = require('onenote-deeplink-parser')
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -23,22 +24,13 @@ app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
       var encodedUrl = request.body['text'];
 
-var pageNameRegex = /(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)(.*)(%7C[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}%2F)/;
-var pageName = encodedUrl.match(pageNameRegex)[2];
+var obj = parser(encodedUrl);
 
-var sectionNameRegex = /%28(.*).one/;
-var sectionName = encodedUrl.match(sectionNameRegex)[1];
-
-var actualName = decodeURIComponent(pageName);
-
-var actualSection = decodeURIComponent(sectionName);
-
-var name = actualName;
       var returnVal = {
     "response_type": "in_channel",
     "attachments": [
         {
-            "title": name+" ("+actualSection+")",
+            "title": obj.pageName+" ("+obj.sectionName+")",
             "title_link": encodedUrl,
             "color": "#7D26CD",
             "author_name": "OneNote Online",
