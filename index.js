@@ -24,7 +24,7 @@ app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
       var encodedUrl = request.body['text'];
 
-var obj = parser(encodedUrl);
+var obj = parser(request.body['text']);
 
       var returnVal = {
     "response_type": "in_channel",
