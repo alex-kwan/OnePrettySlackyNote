@@ -13,7 +13,8 @@
     "body-parser": "^1.15.0",
     "request": "^2.70.0",
     "ejs": "2.4.1",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "onenote-deeplink-parser": "1.0.0"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,5 @@
     "slash-command",
     "OneNote"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "onenote-deeplink-parser": "^1.0.0"
-  }
+  "license": "MIT"
 }

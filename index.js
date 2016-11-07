@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var rquest = require('request');
-var parser = require('onenote-deeplink-parser')
+var parser = require('onenote-deeplink-parser');
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
