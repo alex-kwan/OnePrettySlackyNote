@@ -26,5 +26,8 @@
     "slash-command",
     "OneNote"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "onenote-deeplink-parser": "^1.0.0"
+  }
 }
