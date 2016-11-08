@@ -22,16 +22,15 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
-      var encodedUrl = request.body['text'];
 
-var obj = parser(request.body['text']);
+  var obj = parser(decodeURIComponent(request.body['text']));
 
-      var returnVal = {
+  var returnVal = {
     "response_type": "in_channel",
     "attachments": [
         {
             "title": obj.pageName+" ("+obj.sectionName+")",
-            "title_link": encodedUrl,
+            "title_link": request.body['text'],
             "color": "#7D26CD",
             "author_name": "OneNote Online",
             "author_icon": "https://c1.staticflickr.com/9/8595/16243851041_5638c638a9_s_d.jpg",

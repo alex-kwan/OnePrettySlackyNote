@@ -14,7 +14,7 @@
     "request": "^2.70.0",
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "onenote-deeplink-parser": "1.0.2"
+    "onenote-deeplink-parser": "1.0.3"
   },
   "repository": {
     "type": "git",
