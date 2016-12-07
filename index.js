@@ -32,6 +32,7 @@ app.post('/', function(request, response) {
       console.log('delimited : '+decodedUrl);
     }
 
+    console.log('going to parse : '+decodedUrl);
     var obj = parser(decodedUrl);
 
     var returnVal = {
