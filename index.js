@@ -23,7 +23,15 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
 
-  var obj = parser(decodeURIComponent(request.body['text']));
+  var decodedUrl = decodeURIComponent(request.body['text']);
+
+  var delimiter = decodedUrl.indexOf('\n');
+
+  if (delimiter !== -1){
+    decodedUrl = decodedUrl.substring(0, delimiter);
+  }
+  
+  var obj = parser(decodedUrl);
 
   var returnVal = {
     "response_type": "in_channel",
