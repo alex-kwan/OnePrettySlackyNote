@@ -33,6 +33,10 @@ app.post('/', function(request, response) {
     }
 
     console.log('going to parse : '+decodedUrl);
+
+    var wdTest = getParameterByName('wd', decodedUrl);
+
+    console.log('wdParam : '+wdTest);
     var obj = parser(decodedUrl);
     console.log('this is the output: '+JSON.stringify(obj));
     var returnVal = {
@@ -70,3 +74,19 @@ app.listen(app.get('port'), function() {
 });
 
 
+// retrieves query parameters by name
+// http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+function getParameterByName(name, url) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) {
+        return null;
+    }
+
+    if (!results[2]) {
+        return '';
+    }
+
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
