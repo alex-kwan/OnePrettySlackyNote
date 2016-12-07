@@ -29,6 +29,7 @@ app.post('/', function(request, response) {
 
     if (delimiter !== -1){
       decodedUrl = decodedUrl.substring(0, delimiter);
+      console.log('delimited : '+decodedUrl);
     }
 
     var obj = parser(decodedUrl);
