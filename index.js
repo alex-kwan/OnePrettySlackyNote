@@ -34,7 +34,7 @@ app.post('/', function(request, response) {
 
     console.log('going to parse : '+decodedUrl);
     var obj = parser(decodedUrl);
-
+    console.log('this is the output: '+JSON.stringify(obj));
     var returnVal = {
       "response_type": "in_channel",
       "attachments": [
