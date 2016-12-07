@@ -22,29 +22,29 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response) {
   if(request.body['command'] == "/onenoteurl"){
+    console.log('before decoded :' + request.body['text']);
+    var decodedUrl = decodeURIComponent(request.body['text']);
+     console.log('after decoded :' + decodedUrl);
+    var delimiter = decodedUrl.indexOf('\n');
 
-  var decodedUrl = decodeURIComponent(request.body['text']);
+    if (delimiter !== -1){
+      decodedUrl = decodedUrl.substring(0, delimiter);
+    }
 
-  var delimiter = decodedUrl.indexOf('\n');
+    var obj = parser(decodedUrl);
 
-  if (delimiter !== -1){
-    decodedUrl = decodedUrl.substring(0, delimiter);
-  }
-  
-  var obj = parser(decodedUrl);
-
-  var returnVal = {
-    "response_type": "in_channel",
-    "attachments": [
-        {
-            "title": obj.pageName+" ("+obj.sectionName+")",
-            "title_link": request.body['text'],
-            "color": "#7D26CD",
-            "author_name": "OneNote Online",
-            "author_icon": "https://c1.staticflickr.com/9/8595/16243851041_5638c638a9_s_d.jpg",
-        }
-    ]
-};
+    var returnVal = {
+      "response_type": "in_channel",
+      "attachments": [
+          {
+              "title": obj.pageName+" ("+obj.sectionName+")",
+              "title_link": request.body['text'],
+              "color": "#7D26CD",
+              "author_name": "OneNote Online",
+              "author_icon": "https://c1.staticflickr.com/9/8595/16243851041_5638c638a9_s_d.jpg",
+          }
+      ]
+  };
 }
     response.send({"response_type": "ephemeral",
         "text": "Going to minimize the url for easy reading :D, don't worry if it says the request timed out.",
