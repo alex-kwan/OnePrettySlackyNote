@@ -37,6 +37,8 @@ app.post('/', function(request, response) {
     var wdTest = getParameterByName('wd', decodedUrl);
 
     console.log('wdParam : '+wdTest);
+
+    decodedUrl = 'https://onedrive.live.com/edit.aspx/Documents/Alex^4s Notebook?cid=7d4ca48ab71fa43a&id=documents&wd=target(Quick Notes.one|E47DF342-2ECA-4032-88F9-4FAADE657446/Talked about how in Canada the govt will not let|98216260-3969-8942-847A-1CEEA7E436CE/)';
     var obj = parser(decodedUrl);
     console.log('this is the output: '+JSON.stringify(obj));
     var returnVal = {
